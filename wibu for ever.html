@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wibu for Ever — Koleksi Anime</title>
+  <meta name="description" content="Wibu for Ever - halaman showcase singkat untuk Naruto, One Piece, Black Clover, Jujutsu Kaisen, Boku no Hero" />
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#ff6b6b; --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.02);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,#071021 0%, #0b1220 60%);color:#e6eef8;min-height:100vh}
+    header{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:20px 28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);backdrop-filter: blur(6px);position:sticky;top:0;z-index:50}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#ff6b6b,#ffb86b);display:flex;align-items:center;justify-content:center;font-weight:700;color:#0b1220}
+    h1{font-size:18px;margin:0}
+    nav{display:flex;gap:12px;align-items:center}
+    .search{display:flex;gap:8px;align-items:center;background:var(--glass);padding:8px;border-radius:10px}
+    input[type=search]{background:transparent;border:0;outline:none;color:var(--muted);min-width:180px}
+    .controls{display:flex;gap:8px;align-items:center}
+    .btn{background:var(--accent);border:0;padding:8px 12px;border-radius:10px;color:#071021;font-weight:600;cursor:pointer}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;padding:28px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);display:flex;gap:12px;align-items:flex-start}
+    .poster{width:96px;height:136px;border-radius:8px;flex-shrink:0;background-size:cover;background-position:center;box-shadow:inset 0 -12px 30px rgba(0,0,0,0.45)}
+    .meta{flex:1}
+    .title{font-size:16px;margin:0 0 6px 0}
+    .tags{display:flex;gap:6px;flex-wrap:wrap}
+    .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:var(--glass-2);color:var(--muted)}
+    .desc{font-size:13px;color:var(--muted);margin-top:8px}
+    .card-footer{display:flex;gap:8px;margin-top:10px}
+    .link-btn{border:1px solid rgba(255,255,255,0.04);background:transparent;padding:8px 10px;border-radius:8px;color:var(--muted);cursor:pointer}
+
+    main{max-width:1100px;margin:18px auto;padding:12px}
+    .hero{display:flex;gap:20px;align-items:center;padding:18px;border-radius:12px}
+    .hero .left{flex:1}
+    .hero h2{margin:0 0 8px 0;font-size:26px}
+    .hero p{margin:0;color:var(--muted)}
+    footer{padding:18px;text-align:center;color:var(--muted)}
+
+    /* modal */
+    .modal-bg{position:fixed;inset:0;background:rgba(2,6,23,0.6);display:none;align-items:center;justify-content:center;z-index:200}
+    .modal{background:#071026;padding:18px;border-radius:12px;max-width:760px;width:94%;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+    .modal h3{margin-top:0}
+
+    /* responsive */
+    @media (max-width:640px){header{flex-wrap:wrap}.logo{width:44px;height:44px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">Wf</div>
+      <div>
+        <h1>Wibu for Ever</h1>
+        <div style="font-size:12px;color:var(--muted)">Koleksi dan info singkat anime populer</div>
+      </div>
+    </div>
+
+    <nav>
+      <div class="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <input id="search" type="search" placeholder="Cari judul atau tag..." />
+      </div>
+      <div class="controls">
+        <button id="themeToggle" class="btn" title="Toggle theme">Mode</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="left">
+        <h2>Selamat datang, Wibu!</h2>
+        <p>Jelajahi ringkasan singkat, tag, dan tombol cepat untuk menonton trailer masing-masing anime. Klik "More" untuk detail lengkap.</p>
+      </div>
+      <div style="width:220px;text-align:right">
+        <img alt="wibu" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='130'><rect rx='12' width='220' height='130' fill='%23071a2b'/><text x='50%' y='50%' fill='%23ffb86b' font-size='18' font-family='Arial' dominant-baseline='middle' text-anchor='middle'>Wibu for Ever</text></svg>" style="border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.6)"/>
+      </div>
+    </section>
+
+    <section class="grid" id="animeGrid">
+      <!-- Cards inserted by JavaScript -->
+    </section>
+
+    <div style="text-align:center;margin-top:14px">
+      <button id="shuffle" class="link-btn">Acak Koleksi</button>
+      <button id="showAll" class="link-btn">Tampilkan Semua</button>
+    </div>
+  </main>
+
+  <footer>
+    Dibuat dengan ♥ untuk para wibu • Konten untuk contoh edukasi
+  </footer>
+
+  <div id="modalBg" class="modal-bg">
+    <div class="modal" role="dialog" aria-modal="true">
+      <button id="closeModal" class="link-btn" style="float:right">Tutup</button>
+      <h3 id="modalTitle">Judul</h3>
+      <p id="modalDesc" style="color:var(--muted)"></p>
+      <div id="modalExtra" style="margin-top:12px;color:var(--muted)"></div>
+    </div>
+  </div>
+
+  <script>
+    const animes = [
+      {
+        id: 'naruto', title:'Naruto', years:'2002 — 2017', tags:['Shounen','Ninja','Petualangan'],
+        poster:'images/naruto.jpeg',
+        desc:'Cerita seorang ninja muda bernama Naruto Uzumaki yang bermimpi menjadi Hokage dan berjuang melawan kesepian serta ancaman besar.'
+      },
+      {
+        id: 'onepiece', title:'One Piece', years:'1999 — sekarang', tags:['Shounen','Laut','Petualangan'],
+        poster:'images/one.jpeg',
+        desc:'Monkey D. Luffy berlayar mencari One Piece untuk menjadi Raja Bajak Laut — kisah persahabatan, tekad, dan petualangan lautan.'
+      },
+      {
+        id: 'blackclover', title:'Black Clover', years:'2017 — 2021', tags:['Shounen','Sihir','Aksi'],
+        poster:'images/black.jpg',
+        desc:'Asta, anak yang lahir tanpa kekuatan sihir di dunia penuh sihir, berjuang keras untuk menjadi Kaisar Sihir.'
+      },
+      {
+        id: 'jujutsu', title:'Jujutsu Kaisen', years:'2020 — sekarang', tags:['Dark Fantasy','Aksi','Cursing'],
+        poster:'images/jujutsu.jpeg',
+        desc:'Itadori Yuji terlibat dunia kutukan setelah menelan jari Sukuna — pertarungan modern melawan makhluk-makhluk supranatural.'
+      },
+      {
+        id: 'bnha', title:'Boku no Hero (My Hero Academia)', years:'2016 — sekarang', tags:['Shounen','Superhero','Sekolah'],
+        poster:'images/boku.jpeg',
+        desc:'Mundo di mana sebagian besar orang memiliki Quirk — Deku bermimpi menjadi pahlawan nomor satu meski awalnya tanpa kekuatan.'
+      }
+    ];
+
+    const grid = document.getElementById('animeGrid');
+    const search = document.getElementById('search');
+    const modalBg = document.getElementById('modalBg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalExtra = document.getElementById('modalExtra');
+
+    function render(list){
+      grid.innerHTML = '';
+      list.forEach(a=>{
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.innerHTML = `
+          <div class="poster" style="background-image:url('${a.poster}')" aria-hidden></div>
+          <div class="meta">
+            <h4 class="title">${a.title} <span style="font-size:11px;color:var(--muted);font-weight:500"> — ${a.years}</span></h4>
+            <div class="tags">${a.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+            <p class="desc">${a.desc}</p>
+            <div class="card-footer">
+              <button class="link-btn" data-id="${a.id}" aria-label="More">More</button>
+              <button class="link-btn" onclick="openTrailer('${encodeURIComponent(a.title)}')">Watch Trailer</button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      })
+    }
+
+    function openTrailer(title){
+      const q = title.replace(/\s+/g,'+');
+      window.open('https://www.youtube.com/results?search_query='+q+'+trailer','_blank');
+    }
+
+    grid.addEventListener('click', (e)=>{
+      const btn = e.target.closest('button[data-id]');
+      if(!btn) return;
+      const id = btn.dataset.id;
+      const info = animes.find(x=>x.id===id);
+      if(info){
+        modalTitle.textContent = info.title;
+        modalDesc.textContent = info.desc;
+        modalExtra.innerHTML = `<strong>Years:</strong> ${info.years} <br><strong>Tags:</strong> ${info.tags.join(', ')} <br><div style="margin-top:8px"><a href='https://www.youtube.com/results?search_query=${encodeURIComponent(info.title)}+opening' target='_blank' class='link-btn'>Lihat opening</a></div>`;
+        modalBg.style.display = 'flex';
+      }
+    })
+
+    document.getElementById('closeModal').addEventListener('click',()=>modalBg.style.display='none');
+    modalBg.addEventListener('click',(e)=>{if(e.target===modalBg) modalBg.style.display='none'});
+
+    search.addEventListener('input', ()=>{
+      const q = search.value.trim().toLowerCase();
+      if(!q) return render(animes);
+      const filtered = animes.filter(a=>{
+        return a.title.toLowerCase().includes(q) || a.tags.join(' ').toLowerCase().includes(q) || a.desc.toLowerCase().includes(q);
+      })
+      render(filtered);
+    })
+
+    document.getElementById('shuffle').addEventListener('click', ()=>{
+      const arr = [...animes];
+      for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}
+      render(arr);
+    })
+    document.getElementById('showAll').addEventListener('click', ()=>render(animes));
+
+    // theme toggle: simple invert
+    const themeToggle = document.getElementById('themeToggle');
+    let alt=false;
+    themeToggle.addEventListener('click', ()=>{
+      alt = !alt;
+      if(alt){
+        document.documentElement.style.setProperty('--bg','#fff');
+        document.documentElement.style.setProperty('--card','#f7f9fc');
+        document.documentElement.style.setProperty('--muted','#334155');
+        document.documentElement.style.setProperty('--accent','#ff6b6b');
+        document.body.style.background = 'linear-gradient(180deg,#f6fbff,#eef6ff)';
+        document.body.style.color = '#0b1220';
+      } else {
+        document.documentElement.style.removeProperty('--bg');
+        document.documentElement.style.removeProperty('--card');
+        document.documentElement.style.removeProperty('--muted');
+        document.documentElement.style.removeProperty('--accent');
+        document.body.style.background = '';
+        document.body.style.color = '';
+      }
+    })
+
+    // initial render
+    render(animes);
+  </script>
+</body>
+</html>
